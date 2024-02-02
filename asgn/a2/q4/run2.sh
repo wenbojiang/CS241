@@ -1,0 +1,1 @@
+cat main.asm stirling_wb.asm | ../../bin/cs241.binasm > stirling_wb.mips

@@ -1,0 +1,13 @@
+#!/bin/sh
+COURSEHOME="/u/cs241"
+CLASSPREFIX="cs241"
+CLASSNAME="wordasm"
+
+if ! [ -r "$COURSEHOME/pub/classes/${CLASSPREFIX}/${CLASSNAME}.class" ]; then
+  echo "This program has not been made available yet." 1>&2 
+  echo "Please wait until a future assignment." 1>&2
+  echo "If you believe it should be enabled, please contact the ISA." 1>&2
+  exit 1
+fi
+
+java ${CLASSPREFIX}.${CLASSNAME} "$@"

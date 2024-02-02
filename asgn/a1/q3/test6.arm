@@ -1,0 +1,21 @@
+lis $1 
+.word 1
+lis $2
+.word 6
+
+add $3, $1, $2
+beq $3, $0, result            ; 0/0 = 1
+bne $1, $0, division
+add $3, $0, $0
+jr $31
+division: 
+    divu $2, $1
+    mfhi $3
+    bne $3, $0, end
+ result:   
+    lis $3
+    .word 1
+    jr $31
+end: 
+    add $3, $0, $0
+    jr $31
